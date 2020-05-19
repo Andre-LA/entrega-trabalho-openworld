@@ -8,7 +8,19 @@ public class FirstPersonWalker : MonoBehaviour
     public float vel, deslocamentoAltura;
     public LayerMask camada;
 
+    Rigidbody rb;
+
+    void Awake() {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Start() {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void FixedUpdate() {
+        rb.velocity = Vector3.zero;
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
