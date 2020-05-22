@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8129493728137657906}
   - component: {fileID: 8919089021942072223}
   - component: {fileID: 3107079402778514025}
+  - component: {fileID: 168261441}
   m_Layer: 0
   m_Name: MVK_House_04
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1390785677185260725}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 503.86252, y: 10.449431, z: 591.4894}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -92,3 +93,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.2399999, y: 4.3999996, z: 1.4200001}
   m_Center: {x: 0.000000059604645, y: 2.1999998, z: 0.09000012}
+--- !u!208 &168261441
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1390785677185260725}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.62, y: 2.2, z: 0.71000004}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 2.2, z: 0.09}
+  m_TimeToStationary: 0.5

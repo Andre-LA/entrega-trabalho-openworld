@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7223862411351250001}
   - component: {fileID: 4421496696104973232}
   - component: {fileID: 5495590675312920223}
+  - component: {fileID: 756993967}
   m_Layer: 0
   m_Name: BagWithGrain
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7385450321693126901}
-  m_LocalRotation: {x: -0.00000003774895, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 496.11, y: 9.521494, z: 581.78}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -125,3 +126,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &756993967
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7385450321693126901}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.30900002, y: 0.312, z: 0.324}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.006, y: -0.029000001, z: 0.002}
+  m_TimeToStationary: 0.5

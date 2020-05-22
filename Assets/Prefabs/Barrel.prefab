@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 808292501910608234}
   - component: {fileID: 8936206518780779796}
   - component: {fileID: 2412007574905029712}
+  - component: {fileID: 779024233}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3871963519328457036}
-  m_LocalRotation: {x: -0.00000003774895, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 495.8, y: 9.588151, z: 580.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -125,3 +126,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5986732, y: 0.052033544, z: 0.59477985}
   m_Center: {x: 0, y: -0.381208, z: -3.0097495e-16}
+--- !u!208 &779024233
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3871963519328457036}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.29900002, y: 0.411, z: 0.29700002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0.004, z: 0}
+  m_TimeToStationary: 0.5

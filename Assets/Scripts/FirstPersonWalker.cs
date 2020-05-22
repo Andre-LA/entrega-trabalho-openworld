@@ -8,6 +8,8 @@ public class FirstPersonWalker : MonoBehaviour
     public float vel, deslocamentoAltura;
     public LayerMask camada;
 
+    public static Vector3 pontoChao = Vector3.zero;
+
     Rigidbody rb;
 
     void Awake() {
@@ -16,6 +18,16 @@ public class FirstPersonWalker : MonoBehaviour
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Escape)) {
+            if (Cursor.lockState == CursorLockMode.Locked) {
+                Cursor.lockState = CursorLockMode.None;
+            } else {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
     }
 
     void FixedUpdate() {
@@ -40,8 +52,10 @@ public class FirstPersonWalker : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, camada))
-            pos.y = hit.point.y + deslocamentoAltura;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, Mathf.Infinity, camada)) {
+            pontoChao = hit.point;
+            pos.y = pontoChao.y + deslocamentoAltura;
+        }
 
         transform.position = new Vector3(transform.position.x, pos.y, transform.position.z);
     }
