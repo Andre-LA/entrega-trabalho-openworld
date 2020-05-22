@@ -12,6 +12,7 @@ public class IA : MonoBehaviour
 
     public EstadoIA estado;
     public float dano;
+    public Animator controladorAnimacao;
 
     NavMeshAgent agenteNM;
     Vida vida;
@@ -33,6 +34,8 @@ public class IA : MonoBehaviour
         if (estado == EstadoIA.Atacando) {
             vidaJogador.vida = vidaJogador.vida - dano * Time.deltaTime;
         }
+
+        controladorAnimacao.SetFloat("velocidade", agenteNM.velocity.magnitude);
 
         if (vida.vida <= 0) {
             Destroy(gameObject);
