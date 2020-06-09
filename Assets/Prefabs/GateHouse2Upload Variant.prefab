@@ -11,8 +11,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.425476, y: 7.34136, z: 12.421753}
-  m_Center: {x: 8.153046, y: -0.5353098, z: -0.1348877}
+  m_Size: {x: 26.52212, y: 31.733946, z: 25.6821}
+  m_Center: {x: 16.338463, y: 7.7319746, z: -0.38043976}
 --- !u!65 &6362181569954235935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24,8 +24,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 13.425476, y: 7.34136, z: 12.421753}
-  m_Center: {x: -8.153046, y: -0.5353098, z: -0.04498291}
+  m_Size: {x: 26.52212, y: 31.733946, z: 25.6821}
+  m_Center: {x: -16.33846, y: 7.7319746, z: -0.38043976}
 --- !u!65 &6513859234470341330
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37,8 +37,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20.84784, y: 11.706194, z: 9.903564}
-  m_Center: {x: -0.123809814, y: 6.2590055, z: -1.2141113}
+  m_Size: {x: 8.183202, y: 16.279543, z: 14.125111}
+  m_Center: {x: -0.12380934, y: 5.731311, z: 0.8966627}
 --- !u!208 &1932300850
 NavMeshObstacle:
   m_ObjectHideFlags: 0
