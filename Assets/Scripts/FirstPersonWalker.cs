@@ -21,13 +21,13 @@ public class FirstPersonWalker : MonoBehaviour
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.Escape)) {
-            if (Cursor.lockState == CursorLockMode.Locked) {
+        //if (Input.GetKeyDown(KeyCode.Escape)) {
+        //    if (Cursor.lockState == CursorLockMode.Locked) {
                 Cursor.lockState = CursorLockMode.None;
-            } else {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-        }
+        //    } else {
+        //        Cursor.lockState = CursorLockMode.Locked;
+        //    }
+        //}
     }
 
     void FixedUpdate() {
