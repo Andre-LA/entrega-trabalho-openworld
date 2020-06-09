@@ -31,14 +31,14 @@ public class IA : MonoBehaviour
             estado = EstadoIA.Andando;
         }
 
-        if (estado == EstadoIA.Atacando) {
-            vidaJogador.vida = vidaJogador.vida - dano * Time.deltaTime;
-        }
-
         controladorAnimacao.SetFloat("velocidade", agenteNM.velocity.magnitude);
 
         if (vida.vida <= 0) {
             Destroy(gameObject);
         }
+    }
+
+    public void Atacar() {
+        vidaJogador.vida = vidaJogador.vida - dano;
     }
 }
