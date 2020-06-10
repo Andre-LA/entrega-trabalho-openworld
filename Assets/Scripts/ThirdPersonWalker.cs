@@ -69,8 +69,9 @@ public class ThirdPersonWalker : MonoBehaviour
         if (estaEmMovimento)
             tr.Translate(0, 0, mov.magnitude * velocidadeMov * Time.deltaTime);
 
-        // alimentando parâemtro anim
+        // alimentando parâmetros anim
         anim.SetFloat("velocidade", mov.magnitude);
+        anim.SetBool("estaNoChao", estaNoChao);
 
         // acompanhar chão
         if (!estaEmPulo) {

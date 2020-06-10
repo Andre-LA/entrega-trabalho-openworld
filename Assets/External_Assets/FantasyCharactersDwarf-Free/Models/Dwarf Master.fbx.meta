@@ -926,7 +926,7 @@ ModelImporter:
     second: Attack (1)
   - first:
       74: 7400022
-    second: Attack (2)
+    second: Pulo
   - first:
       74: 7400024
     second: Attack (3)
@@ -1306,18 +1306,18 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Attack (2)
+      name: Pulo
       takeName: Scene
       internalID: 0
-      firstFrame: 869
-      lastFrame: 908
+      firstFrame: 875
+      lastFrame: 885
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -1333,7 +1333,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 2
     - serializedVersion: 16
       name: Attack (3)
       takeName: Scene
