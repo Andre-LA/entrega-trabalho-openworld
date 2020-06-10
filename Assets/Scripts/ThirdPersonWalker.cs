@@ -18,6 +18,8 @@ public class ThirdPersonWalker : MonoBehaviour
     public bool estaEmPulo;
     public bool estaEmMovimento;
 
+    public static Vector3 pontoChao;
+
     void Awake() {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
@@ -27,6 +29,8 @@ public class ThirdPersonWalker : MonoBehaviour
     void FixedUpdate() {
         // receber dados de entrada do jogador
         bool apertouPulo = Input.GetButtonDown("Jump");
+        bool apertouAtaque = Input.GetButtonDown("Fire1");
+
         float movH = Input.GetAxis("Horizontal");
         float movV = Input.GetAxis("Vertical");
 
@@ -46,6 +50,13 @@ public class ThirdPersonWalker : MonoBehaviour
 
         estaEmPulo = apertouPulo || !estaNoChao;
         estaEmMovimento = mov.magnitude > 0.1f;
+
+        // ataque
+        if (apertouAtaque && !estaEmPulo) {
+            anim.SetTrigger("atacou");
+
+
+        }
 
         // pulo
         rb.useGravity = estaEmPulo;
@@ -88,6 +99,8 @@ public class ThirdPersonWalker : MonoBehaviour
                 Vector3 pos = tr.position;
                 pos.y = hit.point.y + deslocamentoAltura;
                 tr.position = pos;
+
+                pontoChao = hit.point;
             }
 
             // zerar inercia
