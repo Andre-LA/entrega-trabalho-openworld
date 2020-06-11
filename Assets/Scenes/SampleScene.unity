@@ -2002,6 +2002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ia: {fileID: 0}
+  trdPWalker: {fileID: 0}
 --- !u!1001 &1531773621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2448,6 +2449,7 @@ MonoBehaviour:
   pontoTiro: {fileID: 767687644}
   forcaLancamentoMagia: 20
   colisorMartelo: {fileID: 280078877}
+  trilhaMartelo: {fileID: 542082169}
   estaNoChao: 0
   estaEmPulo: 0
   estaEmMovimento: 0
