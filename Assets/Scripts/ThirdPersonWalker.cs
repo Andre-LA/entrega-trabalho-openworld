@@ -10,6 +10,13 @@ public class ThirdPersonWalker : MonoBehaviour
     public LayerMask camadaChao;
     public Animator anim;
 
+    public GameObject projetilMagia;
+    public Transform pontoTiro;
+    public float forcaLancamentoMagia;
+
+    public CapsuleCollider colisorMartelo;
+    public TrailRenderer trilhaMartelo;
+
     Transform tr;
     Rigidbody rb;
     Transform trCam;
@@ -18,18 +25,26 @@ public class ThirdPersonWalker : MonoBehaviour
     public bool estaEmPulo;
     public bool estaEmMovimento;
 
+    public bool magiaUsada;
+
+    SistemaSom sistemaDeSom;
+
     public static Vector3 pontoChao;
 
     void Awake() {
         tr = GetComponent<Transform>();
         rb = GetComponent<Rigidbody>();
         trCam = GameObject.FindWithTag("Tripe").GetComponent<Transform>();
+        sistemaDeSom = GameObject.FindWithTag("MainCamera").GetComponent<SistemaSom>();
+
+        colisorMartelo.enabled = false;
     }
 
     void FixedUpdate() {
         // receber dados de entrada do jogador
         bool apertouPulo = Input.GetButtonDown("Jump");
         bool apertouAtaque = Input.GetButtonDown("Fire1");
+        bool apertouMagia = Input.GetButtonDown("Fire2");
 
         float movH = Input.GetAxis("Horizontal");
         float movV = Input.GetAxis("Vertical");
@@ -52,10 +67,22 @@ public class ThirdPersonWalker : MonoBehaviour
         estaEmMovimento = mov.magnitude > 0.1f;
 
         // ataque
-        if (apertouAtaque && !estaEmPulo) {
+        if (apertouAtaque && !estaEmPulo && !colisorMartelo.enabled) {
             anim.SetTrigger("atacou");
+            colisorMartelo.enabled = true;
+            trilhaMartelo.enabled = true;
+            Invoke("DesativarMartelo", 0.2f);
+        }
 
+        // magia
+        if (apertouMagia && !estaEmPulo && !colisorMartelo.enabled && !magiaUsada) {
+            anim.SetTrigger("magia");
+            magiaUsada = true;
+            Invoke("DesativaMagia", 0.2f);
 
+            GameObject magiaGbj = Instantiate<GameObject>(projetilMagia, pontoTiro.position, pontoTiro.rotation);
+            Rigidbody magiaRb = magiaGbj.GetComponent<Rigidbody>();
+            magiaRb.AddForce(magiaGbj.transform.forward * forcaLancamentoMagia, ForceMode.Impulse);
         }
 
         // pulo
@@ -70,6 +97,7 @@ public class ThirdPersonWalker : MonoBehaviour
 
         if (apertouPulo && estaNoChao) {
             rb.AddForce(Vector3.up * intensidadePulo, ForceMode.Impulse);
+            sistemaDeSom.Emitir(SistemaSom.EfeitoSonoro.Pulo);
         }
 
         // rotacionar o jogador na direção do movimento
@@ -106,5 +134,14 @@ public class ThirdPersonWalker : MonoBehaviour
             // zerar inercia
             rb.velocity = Vector3.zero;
         }
+    }
+
+    void DesativarMartelo() {
+        colisorMartelo.enabled = false;
+        trilhaMartelo.enabled = false;
+    }
+
+    void DesativaMagia() {
+        magiaUsada = false;
     }
 }

@@ -16,8 +16,13 @@ public class Explosao : MonoBehaviour
             if (hit.rigidbody) {
                 hit.rigidbody.AddExplosionForce(forcaExplosao, transform.position, 10);
             }
+
+            if (hit.transform.gameObject.tag == "Inimigo") {
+                Vida vidaInimigo = hit.transform.gameObject.GetComponent<Vida>();
+                vidaInimigo.DiminuirVida(150);
+            }
         }
 
-        Destroy(gameObject, 20);
+        Destroy(gameObject, 1.5f);
     }
 }

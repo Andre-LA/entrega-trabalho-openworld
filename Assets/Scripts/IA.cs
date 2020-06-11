@@ -18,10 +18,13 @@ public class IA : MonoBehaviour
     Vida vida;
     Vida vidaJogador;
 
+    SistemaSom sistemaDeSom;
+
     void Awake() {
         agenteNM = GetComponent<NavMeshAgent>();
         vida = GetComponent<Vida>();
         vidaJogador = GameObject.FindWithTag("Player").GetComponent<Vida>();
+        sistemaDeSom = GameObject.FindWithTag("MainCamera").GetComponent<SistemaSom>();
     }
 
     void Update() {
@@ -39,6 +42,7 @@ public class IA : MonoBehaviour
     }
 
     public void Atacar() {
-        vidaJogador.vida = vidaJogador.vida - dano;
+        vidaJogador.DiminuirVida(dano);
+        sistemaDeSom.Emitir(SistemaSom.EfeitoSonoro.Golpe);
     }
 }

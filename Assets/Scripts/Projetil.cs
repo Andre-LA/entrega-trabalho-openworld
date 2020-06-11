@@ -6,15 +6,17 @@ public class Projetil : MonoBehaviour
 {
     public bool destruirAoEncostar;
     public GameObject efeitoExplosao;
+    public Transform trilha;
 
     void OnCollisionEnter(Collision col) {
         if (col.gameObject.tag == "Inimigo") {
             Vida vida = col.gameObject.GetComponent<Vida>();
-            vida.vida = vida.vida - 200;
+            vida.DiminuirVida(200);
         }
 
         if (destruirAoEncostar) {
-            Instantiate(efeitoExplosao, transform.position, Quaternion.identity);
+            GameObject explosaoGbj = Instantiate<GameObject>(efeitoExplosao, transform.position, Quaternion.identity);
+            trilha.SetParent(explosaoGbj.transform);
             Destroy(gameObject);
         }
     }

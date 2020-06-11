@@ -14,6 +14,14 @@ public class MovimentacaoInimigo : MonoBehaviour
 
     void Update() {
         Vector3 posicaoJogador = ThirdPersonWalker.pontoChao;
+
+        Vector3 posicaoPraOlhar = new Vector3(
+            posicaoJogador.x,
+            transform.position.y,
+            posicaoJogador.z
+        );
+        transform.LookAt(posicaoPraOlhar);
+
         agenteNM.SetDestination(posicaoJogador);
 
         float distanciaEntreJogadorEInimigo = Vector3.Distance(transform.position, posicaoJogador);

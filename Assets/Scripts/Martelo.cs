@@ -9,7 +9,7 @@ public class Martelo : MonoBehaviour
     void OnTriggerEnter(Collider col) {
         if (col.gameObject.CompareTag("Inimigo")) {
             Vida vidaInimigo = col.gameObject.GetComponent<Vida>();
-            vidaInimigo.vida = vidaInimigo.vida - dano;
+            vidaInimigo.DiminuirVida(dano);
         }
     }
 }
