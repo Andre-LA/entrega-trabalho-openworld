@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Masmorra1.unity
+    guid: b34dc6ff9efb5ff90a38c9ca5e37aef8
+  - enabled: 1
+    path: Assets/Scenes/Masmorra2.unity
+    guid: 3b0f87e51fe3414f18c11dc2a0bbda67
+  - enabled: 1
+    path: Assets/Scenes/Masmorra3.unity
+    guid: f8ce8c45944ae0a299c66fa087166b02
   m_configObjects: {}
